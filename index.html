@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Anas Rahman — Technical Engineer</title>
+<meta name="description" content="Muhammad Anas Rahman — Technical Engineer & Tableau Server specialist based in Jakarta. Deploying, configuring, and maintaining data platforms for government and private clients." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --bg:#0a0a0b;
+  --bg-elev:#101013;
+  --text:#ededee;
+  --muted:#8a8a92;
+  --faint:#5b5b63;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.14);
+  --accent:#74d0bf;
+  --accent-dim:rgba(116,208,191,.14);
+  --available:#54d267;
+  --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',monospace;
+  --maxw:940px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.6;
+  letter-spacing:-0.01em;
+}
+::selection{background:var(--accent);color:#04140f}
+a{color:inherit;text-decoration:none}
+
+/* subtle top glow */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(60% 45% at 50% -8%, rgba(116,208,191,.07), transparent 70%);
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  background:rgba(10,10,11,.6);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s, background .3s;
+}
+nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,11,.82)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.nav-name{font-weight:600;font-size:15px;letter-spacing:-0.02em}
+.nav-name span{color:var(--faint);font-weight:400}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links .mono{font-family:var(--mono);font-size:11px;color:var(--faint);margin-right:2px}
+.nav-cta{font-size:14px;color:var(--text);border:1px solid var(--line-strong);padding:7px 15px;border-radius:100px;transition:border-color .2s,background .2s}
+.nav-cta:hover{background:#fff;color:#0a0a0b;border-color:#fff}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- section scaffolding ---------- */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:30px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.5}
+h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-height:1.2;margin-bottom:26px}
+
+/* ---------- hero ---------- */
+.hero{display:block;padding:150px 0 40px;border-top:none}
+.avail{display:inline-flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);font-family:var(--mono);border:1px solid var(--line);border-radius:100px;padding:6px 13px;margin-bottom:34px;width:fit-content}
+.avail .dot{width:7px;height:7px;border-radius:50%;background:var(--available);box-shadow:0 0 0 0 rgba(84,210,103,.5);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(84,210,103,.45)}70%{box-shadow:0 0 0 7px rgba(84,210,103,0)}100%{box-shadow:0 0 0 0 rgba(84,210,103,0)}}
+.hero h1{font-size:clamp(40px,8vw,74px);font-weight:600;letter-spacing:-0.045em;line-height:1.02;margin-bottom:26px}
+.hero .lead{font-size:clamp(18px,2.4vw,22px);color:var(--muted);max-width:60ch;line-height:1.55;font-weight:400}
+.hero .lead b{color:var(--text);font-weight:500}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:44px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:500;padding:12px 22px;border-radius:100px;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.btn-primary{background:#fff;color:#0a0a0b}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--text)}
+.btn-ghost:hover{border-color:#fff}
+.btn svg{width:15px;height:15px}
+.hero-social{display:flex;gap:22px;margin-top:34px;font-size:14px}
+.hero-social a{color:var(--muted);display:inline-flex;align-items:center;gap:7px;transition:color .2s}
+.hero-social a:hover{color:var(--text)}
+.hero-social svg{width:16px;height:16px}
+
+/* ---------- about ---------- */
+.about-body{font-size:clamp(17px,2vw,19px);line-height:1.7;color:var(--muted);max-width:64ch}
+.about-body b{color:var(--text);font-weight:500}
+.about-body p+p{margin-top:18px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px}
+.stat .n{font-size:clamp(28px,4vw,38px);font-weight:600;letter-spacing:-0.03em}
+.stat .l{font-size:13px;color:var(--faint);margin-top:6px;line-height:1.35}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr);gap:28px 22px}}
+
+/* ---------- expertise ---------- */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.exp-item{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--line)}
+.exp-item .idx{font-family:var(--mono);font-size:12px;color:var(--faint);padding-top:3px;min-width:26px}
+.exp-item h3{font-size:16px;font-weight:500;margin-bottom:5px}
+.exp-item p{font-size:14px;color:var(--muted);line-height:1.5}
+@media(max-width:640px){.exp-grid{grid-template-columns:1fr;gap:0}}
+
+/* ---------- experience ---------- */
+.job{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:26px 0;border-top:1px solid var(--line)}
+.job:first-child{border-top:none}
+.job .when{font-family:var(--mono);font-size:12.5px;color:var(--faint);padding-top:3px}
+.job h3{font-size:17px;font-weight:600;letter-spacing:-0.01em}
+.job .org{font-size:14px;color:var(--accent);margin:3px 0 12px}
+.job p{font-size:14.5px;color:var(--muted);line-height:1.6}
+@media(max-width:640px){.job{grid-template-columns:1fr;gap:8px}}
+
+/* ---------- projects ---------- */
+.proj{display:block;padding:26px 0;border-top:1px solid var(--line);transition:padding-left .25s}
+.proj:hover{padding-left:8px}
+.proj-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.proj h3{font-size:19px;font-weight:600;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:9px}
+.proj h3 .arrow{color:var(--faint);transition:transform .25s,color .25s}
+.proj:hover h3 .arrow{color:var(--accent);transform:translate(3px,-3px)}
+.proj p{font-size:14.5px;color:var(--muted);max-width:64ch;margin-top:9px;line-height:1.6}
+.proj .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:4px 9px}
+.proj .yr{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap}
+
+/* ---------- certs ---------- */
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cert{border:1px solid var(--line);border-radius:12px;padding:24px;transition:border-color .25s,background .25s}
+.cert:hover{border-color:var(--line-strong);background:var(--bg-elev)}
+.cert .yr{font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:12px}
+.cert h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.cert p{font-size:13.5px;color:var(--muted);line-height:1.55}
+@media(max-width:640px){.cert-grid{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{text-align:left}
+.contact h2{font-size:clamp(30px,6vw,52px);letter-spacing:-0.04em;line-height:1.05;margin-bottom:22px}
+.contact .sub{font-size:17px;color:var(--muted);max-width:52ch;margin-bottom:38px}
+.contact-mail{font-size:clamp(20px,3vw,26px);font-weight:500;display:inline-flex;align-items:center;gap:12px;border-bottom:1px solid var(--line-strong);padding-bottom:6px;transition:border-color .2s,color .2s}
+.contact-mail:hover{border-color:var(--accent);color:var(--accent)}
+.contact-mail .copy{font-family:var(--mono);font-size:11px;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:3px 7px;transition:color .2s,border-color .2s}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:44px}
+.contact-links a{font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:9px 17px;display:inline-flex;align-items:center;gap:9px;transition:color .2s,border-color .2s}
+.contact-links a:hover{color:var(--text);border-color:var(--line-strong)}
+.contact-links svg{width:15px;height:15px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:38px 0}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--faint)}
+.foot-inner .mono{font-family:var(--mono)}
+.foot-inner a{color:var(--muted)}
+.foot-inner a:hover{color:var(--text)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Anas Rahman<span>, Technical Engineer</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 class="reveal">Muhammad<br>Anas Rahman</h1>
+    <p class="lead reveal" style="transition-delay:.06s"><b>Technical Engineer specializing in Tableau Server.</b> I deploy, configure, and maintain data platforms — keeping systems reliable across government and private-sector environments. 3+ years, based in Jakarta.</p>
+    <div class="hero-cta reveal" style="transition-delay:.12s">
+      <a href="#contact" class="btn btn-primary">Get in touch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="Muhammad-Anas-Rahman-CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download CV
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+      </a>
+    </div>
+    <div class="hero-social reveal" style="transition-delay:.24s">
+      <a href="https://www.linkedin.com/in/muhammad-anasrahman-906122152/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn</a>
+      <a href="https://github.com/anas10rahman" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0012 .5z"/></svg>
+        GitHub</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="reveal">About me</h2>
+    <div class="about-body reveal" style="transition-delay:.05s">
+      <p>I'm an <b>IT Infrastructure & Tableau Server specialist</b> based in Jakarta Selatan. For the past three years I've delivered installation, configuration, maintenance, and support for Tableau Server across production environments — resolving incidents for government clients within a two-hour SLA.</p>
+      <p>My work centers on reliability: preventive and corrective maintenance, system optimization, and the clear technical documentation that keeps platforms running long after I've left the room. Alongside that, I serve as a <b>certified Competency Assessor at LSP</b>, evaluating candidates against national standards.</p>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="n">3+</div><div class="l">Years experience</div></div>
+      <div class="stat reveal" style="transition-delay:.06s"><div class="n">8+</div><div class="l">Gov & private clients</div></div>
+      <div class="stat reveal" style="transition-delay:.12s"><div class="n">2h</div><div class="l">Incident resolution SLA</div></div>
+      <div class="stat reveal" style="transition-delay:.18s"><div class="n">50+</div><div class="l">Candidates assessed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="wrap">
+    <h2 class="reveal">What I do</h2>
+    <div class="exp-grid">
+      <div class="exp-item reveal"><span class="idx">01</span><div><h3>Tableau Server Administration</h3><p>Installation, configuration, monitoring & platform administration.</p></div></div>
+      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">02</span><div><h3>Troubleshooting & Incident Handling</h3><p>Corrective maintenance and production incident resolution under SLA.</p></div></div>
+      <div class="exp-item reveal"><span class="idx">03</span><div><h3>Preventive Maintenance</h3><p>Scheduled weekly, bi-weekly & monthly cycles for system stability.</p></div></div>
+      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">04</span><div><h3>Linux Monitoring</h3><p>Server health checks and monitoring scripts for reliability.</p></div></div>
+      <div class="exp-item reveal"><span class="idx">05</span><div><h3>Technical Documentation</h3><p>Maintenance reports, checklists & troubleshooting playbooks.</p></div></div>
+      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">06</span><div><h3>Competency Assessment</h3><p>Observation, interview & portfolio review aligned to LSP standards.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="work">
+  <div class="wrap">
+    <h2 class="reveal">Where I've worked</h2>
+    <div class="job reveal">
+      <div class="when">2023 — Present</div>
+      <div>
+        <h3>IT Support — Tableau Server</h3>
+        <div class="org">PT. Solusi Digital Kreasindo</div>
+        <p>Delivered Tableau Server installation, configuration & support for 3 government clients in production, plus support cases for 5+ private-sector clients. Ran scheduled preventive maintenance and resolved incidents within a 2-hour SLA.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <div class="when">2025 — Present</div>
+      <div>
+        <h3>Assessor & Scheme Committee</h3>
+        <div class="org">LSP Iovasi Digital Teknologi Informasi</div>
+        <p>Conducted competency assessments for 50+ candidates using standardized methods, and managed assessment documentation for ~200 candidates supporting certification schemes.</p>
+      </div>
+    </div>
+    <div class="job reveal">
+      <div class="when">2024 — Present</div>
+      <div>
+        <h3>Instructor's Assistant</h3>
+        <div class="org">Zenith Academy</div>
+        <p>Assisted technical workshops for 70+ participants, prepared learning materials, and evaluated participant projects with structured feedback.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2 class="reveal">Projects</h2>
+    <a class="proj reveal" href="https://github.com/anas10rahman/Portofolio" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>Tableau Server Support <span class="arrow">↗</span></h3>
+        <span class="yr">Ongoing</span>
+      </div>
+      <p>A technical portfolio of health checks, Linux monitoring scripts, maintenance checklists & troubleshooting playbooks, with structured documentation templates for preventive, corrective, and incident workflows.</p>
+      <div class="tags"><span class="tag">Tableau Server</span><span class="tag">Linux</span><span class="tag">Documentation</span></div>
+    </a>
+    <a class="proj reveal" href="https://github.com/anas10rahman/office-finance" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>Office Finance Web App <span class="arrow">↗</span></h3>
+        <span class="yr">Side project</span>
+      </div>
+      <p>A team-built web app for finance management — transaction recording, category management & summary reporting — developed with AI-assisted tooling and structured testing.</p>
+      <div class="tags"><span class="tag">Web App</span><span class="tag">Finance</span><span class="tag">Team</span></div>
+    </a>
+    <a class="proj reveal" href="https://github.com/anas10rahman/lms-platform-belajar" target="_blank" rel="noopener">
+      <div class="proj-top">
+        <h3>LMS Platform <span class="arrow">↗</span></h3>
+        <span class="yr">Side project</span>
+      </div>
+      <p>A web-based learning management system covering course management, participants, learning materials & assignment workflows, with testing and documentation support.</p>
+      <div class="tags"><span class="tag">Web App</span><span class="tag">LMS</span><span class="tag">Education</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="wrap">
+    <h2 class="reveal">Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert reveal">
+        <div class="yr">2025</div>
+        <h3>Tableau Server Administrator</h3>
+        <p>Validated knowledge of server installation, configuration, maintenance, monitoring, troubleshooting & platform administration.</p>
+      </div>
+      <div class="cert reveal" style="transition-delay:.06s">
+        <div class="yr">2023</div>
+        <h3>Competency Assessor</h3>
+        <p>Competency assessment (observation, interview, portfolio), certification documentation & technical documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="reveal">Let's work together.</h2>
+    <p class="sub reveal" style="transition-delay:.1s">Have a Tableau Server environment that needs care, or a role that fits? I'm open to opportunities — let's talk.</p>
+    <a class="contact-mail reveal" style="transition-delay:.15s" id="mail" href="mailto:anas10rahman@gmail.com">anas10rahman@gmail.com <span class="copy" id="copyBadge">copy</span></a>
+    <div class="contact-links reveal" style="transition-delay:.2s">
+      <a href="https://wa.me/6285959872115" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.82 11.82 0 0012.05 0C5.46 0 .1 5.33.1 11.89c0 2.1.55 4.14 1.6 5.95L0 24l6.34-1.65a12.06 12.06 0 005.7 1.45h.01c6.58 0 11.95-5.34 11.95-11.89a11.82 11.82 0 00-3.48-8.41z"/></svg>
+        WhatsApp</a>
+      <a href="https://www.linkedin.com/in/muhammad-anasrahman-906122152/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn</a>
+      <a href="https://github.com/anas10rahman" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0012 .5z"/></svg>
+        GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>© <span id="yr"></span> Muhammad Anas Rahman</div>
+    <div class="mono">Jakarta, Indonesia</div>
+    <div><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav shadow on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // copy email
+  const mail = document.getElementById('mail');
+  const badge = document.getElementById('copyBadge');
+  mail.addEventListener('click', (ev) => {
+    // let mailto work on the anchor, but also copy to clipboard
+    if (navigator.clipboard) {
+      ev.preventDefault();
+      navigator.clipboard.writeText('anas10rahman@gmail.com').then(() => {
+        badge.textContent = 'copied';
+        setTimeout(() => { badge.textContent = 'copy'; }, 1600);
+      });
+    }
+  });
+</script>
+</body>
+</html>
