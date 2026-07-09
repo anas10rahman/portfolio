@@ -129,8 +129,8 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 /* ---------- projects ---------- */
 .proj{display:block;padding:26px 0;border-top:1px solid var(--line);transition:padding-left .25s}
 .proj:hover{padding-left:8px}
-.proj.nolink{cursor:default}
-.proj.nolink:hover{padding-left:0}
+.proj h3 .ext{font-size:.82em;color:var(--faint);display:inline-block;margin-left:1px;transition:color .25s,transform .25s}
+.proj:hover h3 .ext{color:var(--accent);transform:translate(2px,-2px)}
 .proj-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .proj h3{font-size:19px;font-weight:600;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:9px}
 .proj h3 .gh{width:.9em;height:.9em;color:var(--faint);flex-shrink:0;transition:color .25s,transform .25s}
@@ -161,12 +161,34 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 .contact-links a:hover{color:var(--text);border-color:var(--line-strong)}
 .contact-links svg{width:15px;height:15px}
 
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:38px 0}
-.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--faint)}
-.foot-inner .mono{font-family:var(--mono)}
-.foot-inner a{color:var(--muted)}
-.foot-inner a:hover{color:var(--text)}
+/* ---------- footer (footer-7 adapted) ---------- */
+.site-footer{border-top:1px solid var(--line);padding:80px 0 40px;margin-top:40px}
+.footer-top{display:flex;flex-direction:column;gap:48px;justify-content:space-between}
+.footer-brand{display:flex;flex-direction:column;gap:20px;max-width:360px}
+.footer-logo{display:flex;align-items:center;gap:11px}
+.footer-logo .mark{width:22px;height:22px;border-radius:6px;background:var(--accent);flex-shrink:0}
+.footer-logo span{font-size:17px;font-weight:600;letter-spacing:-0.02em}
+.footer-desc{font-size:14px;color:var(--muted);line-height:1.65}
+.footer-social{display:flex;align-items:center;gap:20px;list-style:none}
+.footer-social a{color:var(--muted);display:inline-flex;transition:color .2s}
+.footer-social a:hover{color:var(--text)}
+.footer-social svg{width:18px;height:18px}
+.footer-cols{display:grid;width:100%;gap:36px;grid-template-columns:repeat(3,1fr)}
+.footer-col h3{font-size:13px;font-weight:600;margin-bottom:16px;letter-spacing:.01em;color:var(--text)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col a{font-size:14px;color:var(--muted);transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px;justify-content:space-between;font-size:12.5px;color:var(--faint)}
+.footer-legal{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none}
+.footer-legal a,.footer-legal .mono{color:var(--muted)}
+.footer-legal a:hover{color:var(--text)}
+.footer-legal .mono{font-family:var(--mono)}
+@media(min-width:900px){
+  .footer-top{flex-direction:row;align-items:flex-start;text-align:left}
+  .footer-cols{max-width:560px;gap:56px}
+}
+@media(min-width:768px){.footer-bottom{flex-direction:row;align-items:center}}
+@media(max-width:560px){.footer-cols{grid-template-columns:repeat(2,1fr);gap:32px 24px}}
 </style>
 </head>
 <body>
@@ -299,14 +321,14 @@ footer{border-top:1px solid var(--line);padding:38px 0}
       <p>A web-based learning management system covering course management, participants, learning materials & assignment workflows, with testing and documentation support.</p>
       <div class="tags"><span class="tag">Web App</span><span class="tag">LMS</span><span class="tag">Education</span></div>
     </a>
-    <div class="proj nolink reveal">
+    <a class="proj reveal" href="https://dev.loview.click" target="_blank" rel="noopener">
       <div class="proj-top">
-        <h3>Loview Landing Page</h3>
+        <h3>Loview Landing Page <span class="ext" aria-hidden="true">↗</span></h3>
         <span class="yr">Side project</span>
       </div>
       <p>As Technical Support, I assisted the Project Manager in building Loview's landing page — a scalable foundation designed to be extended and customized to each client's requests.</p>
       <div class="tags"><span class="tag">Technical Support</span><span class="tag">Landing Page</span><span class="tag">Scalable</span></div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -349,12 +371,64 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap foot-inner">
-    <div>© <span id="yr"></span> Muhammad Anas Rahman</div>
-    <div class="mono">Jakarta, Indonesia</div>
-    <div><a href="#top">Back to top ↑</a></div>
+<!-- FOOTER (footer-7 adapted) -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="mark"></span>
+          <span>Muhammad Anas Rahman</span>
+        </div>
+        <p class="footer-desc">Technical Engineer & Tableau Server specialist — deploying, configuring, and keeping data platforms reliable across government and private-sector environments.</p>
+        <ul class="footer-social">
+          <li><a href="https://www.linkedin.com/in/muhammad-anas-rahman-906122152/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></li>
+          <li><a href="https://github.com/anas10rahman" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0012 .5z"/></svg></a></li>
+          <li><a href="https://wa.me/6285959872115" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.82 11.82 0 0012.05 0C5.46 0 .1 5.33.1 11.89c0 2.1.55 4.14 1.6 5.95L0 24l6.34-1.65a12.06 12.06 0 005.7 1.45h.01c6.58 0 11.95-5.34 11.95-11.89a11.82 11.82 0 00-3.48-8.41z"/></svg></a></li>
+          <li><a href="mailto:anas10rahman@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certs">Certifications</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Projects</h3>
+          <ul>
+            <li><a href="https://github.com/anas10rahman/Portofolio" target="_blank" rel="noopener">Tableau Server Support</a></li>
+            <li><a href="https://github.com/anas10rahman/office-finance" target="_blank" rel="noopener">Office Finance</a></li>
+            <li><a href="https://github.com/anas10rahman/lms-platform-belajar" target="_blank" rel="noopener">LMS Platform</a></li>
+            <li><a href="https://dev.loview.click" target="_blank" rel="noopener">Loview Landing Page</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="mailto:anas10rahman@gmail.com">Email</a></li>
+            <li><a href="https://wa.me/6285959872115" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com/in/muhammad-anas-rahman-906122152/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/anas10rahman" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="yr"></span> Muhammad Anas Rahman. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><span class="mono">Jakarta, Indonesia</span></li>
+        <li><a href="#top">Back to top ↑</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
