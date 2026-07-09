@@ -129,8 +129,8 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 /* ---------- projects ---------- */
 .proj{display:block;padding:26px 0;border-top:1px solid var(--line);transition:padding-left .25s}
 .proj:hover{padding-left:8px}
-.proj h3 .ext{font-size:.82em;color:var(--faint);display:inline-block;margin-left:1px;transition:color .25s,transform .25s}
-.proj:hover h3 .ext{color:var(--accent);transform:translate(2px,-2px)}
+.proj h3 .ext{width:.9em;height:.9em;color:var(--faint);flex-shrink:0;transition:color .25s,transform .25s}
+.proj:hover h3 .ext{color:var(--accent);transform:translateY(-1px)}
 .proj-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .proj h3{font-size:19px;font-weight:600;letter-spacing:-0.02em;display:inline-flex;align-items:center;gap:9px}
 .proj h3 .gh{width:.9em;height:.9em;color:var(--faint);flex-shrink:0;transition:color .25s,transform .25s}
@@ -322,7 +322,7 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
     </a>
     <a class="proj reveal" href="https://dev.loview.click" target="_blank" rel="noopener">
       <div class="proj-top">
-        <h3>Loview Landing Page <span class="ext" aria-hidden="true">↗</span></h3>
+        <h3>Loview Landing Page <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"/></svg></h3>
         <span class="yr">Side project</span>
       </div>
       <p>As Technical Support, I assisted the Project Manager in building Loview's landing page — a scalable foundation designed to be extended and customized to each client's requests.</p>
