@@ -64,8 +64,9 @@ nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,11,.82)}
 .nav-links a{font-size:14px;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--text)}
 .nav-links .mono{font-family:var(--mono);font-size:11px;color:var(--faint);margin-right:2px}
-.nav-cta{font-size:14px;color:var(--text);border:1px solid var(--line-strong);padding:7px 15px;border-radius:100px;transition:border-color .2s,background .2s}
-.nav-cta:hover{background:#fff;color:#0a0a0b;border-color:#fff}
+.nav-cta{font-size:14px;border:1px solid var(--line-strong);padding:7px 15px;border-radius:100px;transition:border-color .2s,background .2s,color .2s}
+.nav-links a.nav-cta{color:var(--text)}
+.nav-links a.nav-cta:hover{background:rgba(255,255,255,.09);border-color:var(--text);color:var(--text)}
 @media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
 
 /* ---------- reveal animation ---------- */
@@ -390,7 +391,6 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
       <p>© <span id="yr"></span> Muhammad Anas Rahman. All rights reserved.</p>
       <ul class="footer-legal">
         <li><span class="mono">Jakarta, Indonesia</span></li>
-        <li><a href="#top">Back to top ↑</a></li>
       </ul>
     </div>
   </div>
