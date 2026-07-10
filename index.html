@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Muhammad Anas Rahman — Technical Engineer</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta name="description" content="Muhammad Anas Rahman — Technical Engineer & Tableau Server specialist based in Jakarta. Deploying, configuring, and maintaining data platforms for government and private clients." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,7 +68,11 @@ nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,11,.82)}
 .nav-cta{font-size:14px;border:1px solid var(--line-strong);padding:7px 15px;border-radius:100px;transition:border-color .2s,background .2s,color .2s}
 .nav-links a.nav-cta{color:var(--text)}
 .nav-links a.nav-cta:hover{background:rgba(255,255,255,.09);border-color:var(--text);color:var(--text)}
-@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+.lang-switch{display:inline-flex;border:1px solid var(--line-strong);border-radius:100px;overflow:hidden;flex-shrink:0}
+.lang-opt{font-family:inherit;font-size:12px;padding:6px 11px;background:transparent;color:var(--muted);border:none;cursor:pointer;transition:color .2s,background .2s;line-height:1}
+.lang-opt.active{background:rgba(255,255,255,.14);color:var(--text)}
+.lang-opt:not(.active):hover{color:var(--text)}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.nav-name span{display:none}}
 
 /* ---------- reveal animation ---------- */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
@@ -199,10 +204,11 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
   <div class="nav-inner">
     <a href="#top" class="nav-name">Anas Rahman<span>, Technical Engineer</span></a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact" class="nav-cta">Get in touch</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch</a>
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="id" class="lang-opt">ID</button><button type="button" data-lang="en" class="lang-opt">EN</button></div>
     </div>
   </div>
 </nav>
@@ -211,12 +217,12 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 <header class="hero" id="top">
   <div class="wrap">
     <h1 class="reveal">Muhammad<br>Anas Rahman</h1>
-    <p class="lead reveal" style="transition-delay:.06s"><b>Technical Engineer specializing in Tableau Server.</b> I deploy, configure, and maintain data platforms — keeping systems reliable across government and private-sector environments. 3+ years, based in Jakarta.</p>
+    <p class="lead reveal" style="transition-delay:.06s" data-i18n="hero.lead"><b>Technical Engineer specializing in Tableau Server.</b> I deploy, configure, and maintain data platforms — keeping systems reliable across government and private-sector environments. 3+ years, based in Jakarta.</p>
     <div class="hero-cta reveal" style="transition-delay:.12s">
-      <a href="#contact" class="btn btn-primary">Get in touch
+      <a href="#contact" class="btn btn-primary"><span data-i18n="btn.getInTouch">Get in touch</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="Muhammad-Anas-Rahman-CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download CV
+      <a href="Muhammad-Anas-Rahman-CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><span data-i18n="btn.downloadCv">Download CV</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
       </a>
     </div>
@@ -234,16 +240,16 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <h2 class="reveal">About me</h2>
+    <h2 class="reveal" data-i18n="about.h2">About me</h2>
     <div class="about-body reveal" style="transition-delay:.05s">
-      <p>I'm an <b>IT Infrastructure & Tableau Server specialist</b> based in Jakarta Selatan. For the past three years I've delivered installation, configuration, maintenance, and support for Tableau Server across production environments — resolving incidents for government clients within a two-hour SLA.</p>
-      <p>My work centers on reliability: preventive and corrective maintenance, system optimization, and the clear technical documentation that keeps platforms running long after I've left the room. Alongside that, I serve as a <b>certified Competency Assessor at LSP</b>, evaluating candidates against national standards.</p>
+      <p data-i18n="about.p1">I'm an <b>IT Infrastructure & Tableau Server specialist</b> based in Jakarta Selatan. For the past three years I've delivered installation, configuration, maintenance, and support for Tableau Server across production environments — resolving incidents for government clients within a two-hour SLA.</p>
+      <p data-i18n="about.p2">My work centers on reliability: preventive and corrective maintenance, system optimization, and the clear technical documentation that keeps platforms running long after I've left the room. Alongside that, I serve as a <b>certified Competency Assessor at LSP</b>, evaluating candidates against national standards.</p>
     </div>
     <div class="stats">
-      <div class="stat reveal"><div class="n">3+</div><div class="l">Years experience</div></div>
-      <div class="stat reveal" style="transition-delay:.06s"><div class="n">8+</div><div class="l">Gov & private clients</div></div>
-      <div class="stat reveal" style="transition-delay:.12s"><div class="n">2h</div><div class="l">Incident resolution SLA</div></div>
-      <div class="stat reveal" style="transition-delay:.18s"><div class="n">50+</div><div class="l">Candidates assessed</div></div>
+      <div class="stat reveal"><div class="n">3+</div><div class="l" data-i18n="stat.years">Years experience</div></div>
+      <div class="stat reveal" style="transition-delay:.06s"><div class="n">8+</div><div class="l" data-i18n="stat.clients">Gov & private clients</div></div>
+      <div class="stat reveal" style="transition-delay:.12s"><div class="n">2h</div><div class="l" data-i18n="stat.sla">Incident resolution SLA</div></div>
+      <div class="stat reveal" style="transition-delay:.18s"><div class="n">50+</div><div class="l" data-i18n="stat.candidates">Candidates assessed</div></div>
     </div>
   </div>
 </section>
@@ -251,14 +257,14 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 <!-- EXPERTISE -->
 <section id="expertise">
   <div class="wrap">
-    <h2 class="reveal">What I do</h2>
+    <h2 class="reveal" data-i18n="expertise.h2">What I do</h2>
     <div class="exp-grid">
-      <div class="exp-item reveal"><span class="idx">01</span><div><h3>Tableau Server Administration</h3><p>Installation, configuration, monitoring & platform administration.</p></div></div>
-      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">02</span><div><h3>Troubleshooting & Incident Handling</h3><p>Corrective maintenance and production incident resolution under SLA.</p></div></div>
-      <div class="exp-item reveal"><span class="idx">03</span><div><h3>Preventive Maintenance</h3><p>Scheduled weekly, bi-weekly & monthly cycles for system stability.</p></div></div>
-      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">04</span><div><h3>Linux Monitoring</h3><p>Server health checks and monitoring scripts for reliability.</p></div></div>
-      <div class="exp-item reveal"><span class="idx">05</span><div><h3>Technical Documentation</h3><p>Maintenance reports, checklists & troubleshooting playbooks.</p></div></div>
-      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">06</span><div><h3>Competency Assessment</h3><p>Observation, interview & portfolio review aligned to LSP standards.</p></div></div>
+      <div class="exp-item reveal"><span class="idx">01</span><div><h3 data-i18n="exp1.t">Tableau Server Administration</h3><p data-i18n="exp1.d">Installation, configuration, monitoring & platform administration.</p></div></div>
+      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">02</span><div><h3 data-i18n="exp2.t">Troubleshooting & Incident Handling</h3><p data-i18n="exp2.d">Corrective maintenance and production incident resolution under SLA.</p></div></div>
+      <div class="exp-item reveal"><span class="idx">03</span><div><h3 data-i18n="exp3.t">Preventive Maintenance</h3><p data-i18n="exp3.d">Scheduled weekly, bi-weekly & monthly cycles for system stability.</p></div></div>
+      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">04</span><div><h3 data-i18n="exp4.t">Linux Monitoring</h3><p data-i18n="exp4.d">Server health checks and monitoring scripts for reliability.</p></div></div>
+      <div class="exp-item reveal"><span class="idx">05</span><div><h3 data-i18n="exp5.t">Technical Documentation</h3><p data-i18n="exp5.d">Maintenance reports, checklists & troubleshooting playbooks.</p></div></div>
+      <div class="exp-item reveal" style="transition-delay:.04s"><span class="idx">06</span><div><h3 data-i18n="exp6.t">Competency Assessment</h3><p data-i18n="exp6.d">Observation, interview & portfolio review aligned to LSP standards.</p></div></div>
     </div>
   </div>
 </section>
@@ -266,29 +272,29 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 <!-- EXPERIENCE -->
 <section id="work">
   <div class="wrap">
-    <h2 class="reveal">Where I've worked</h2>
+    <h2 class="reveal" data-i18n="work.h2">Where I've worked</h2>
     <div class="job reveal">
-      <div class="when">2023 — Present</div>
+      <div class="when" data-i18n="work.when1">2023 — Present</div>
       <div>
-        <h3>IT Support — Tableau Server</h3>
+        <h3 data-i18n="work1.role">IT Support — Tableau Server</h3>
         <div class="org">PT. Solusi Digital Kreasindo</div>
-        <p>Delivered Tableau Server installation, configuration & support for 3 government clients in production, plus support cases for 5+ private-sector clients. Ran scheduled preventive maintenance and resolved incidents within a 2-hour SLA.</p>
+        <p data-i18n="work1.d">Delivered Tableau Server installation, configuration & support for 3 government clients in production, plus support cases for 5+ private-sector clients. Ran scheduled preventive maintenance and resolved incidents within a 2-hour SLA.</p>
       </div>
     </div>
     <div class="job reveal">
-      <div class="when">2025 — Present</div>
+      <div class="when" data-i18n="work.when2">2025 — Present</div>
       <div>
-        <h3>Assessor & Scheme Committee</h3>
+        <h3 data-i18n="work2.role">Assessor & Scheme Committee</h3>
         <div class="org">LSP Iovasi Digital Teknologi Informasi</div>
-        <p>Conducted competency assessments for 50+ candidates using standardized methods, and managed assessment documentation for ~200 candidates supporting certification schemes.</p>
+        <p data-i18n="work2.d">Conducted competency assessments for 50+ candidates using standardized methods, and managed assessment documentation for ~200 candidates supporting certification schemes.</p>
       </div>
     </div>
     <div class="job reveal">
-      <div class="when">2024 — Present</div>
+      <div class="when" data-i18n="work.when3">2024 — Present</div>
       <div>
-        <h3>Instructor's Assistant</h3>
+        <h3 data-i18n="work3.role">Instructor's Assistant</h3>
         <div class="org">Zenith Academy</div>
-        <p>Assisted technical workshops for 70+ participants, prepared learning materials, and evaluated participant projects with structured feedback.</p>
+        <p data-i18n="work3.d">Assisted technical workshops for 70+ participants, prepared learning materials, and evaluated participant projects with structured feedback.</p>
       </div>
     </div>
   </div>
@@ -297,37 +303,37 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 <!-- PROJECTS -->
 <section id="projects">
   <div class="wrap">
-    <h2 class="reveal">Projects</h2>
+    <h2 class="reveal" data-i18n="projects.h2">Projects</h2>
     <a class="proj reveal" href="https://github.com/anas10rahman/Portofolio" target="_blank" rel="noopener">
       <div class="proj-top">
         <h3>Tableau Server Support <svg class="gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0012 .5z"/></svg></h3>
-        <span class="yr">Ongoing</span>
+        <span class="yr" data-i18n="proj.ongoing">Ongoing</span>
       </div>
-      <p>A technical portfolio of health checks, Linux monitoring scripts, maintenance checklists & troubleshooting playbooks, with structured documentation templates for preventive, corrective, and incident workflows.</p>
+      <p data-i18n="proj1.d">A technical portfolio of health checks, Linux monitoring scripts, maintenance checklists & troubleshooting playbooks, with structured documentation templates for preventive, corrective, and incident workflows.</p>
       <div class="tags"><span class="tag">Tableau Server</span><span class="tag">Linux</span><span class="tag">Documentation</span></div>
     </a>
     <a class="proj reveal" href="https://github.com/anas10rahman/office-finance" target="_blank" rel="noopener">
       <div class="proj-top">
         <h3>Office Finance Web App <svg class="gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0012 .5z"/></svg></h3>
-        <span class="yr">Side project</span>
+        <span class="yr" data-i18n="proj.side">Side project</span>
       </div>
-      <p>A team-built web app for finance management — transaction recording, category management & summary reporting — developed with AI-assisted tooling and structured testing.</p>
+      <p data-i18n="proj2.d">A team-built web app for finance management — transaction recording, category management & summary reporting — developed with AI-assisted tooling and structured testing.</p>
       <div class="tags"><span class="tag">Web App</span><span class="tag">Finance</span><span class="tag">Team</span></div>
     </a>
     <a class="proj reveal" href="https://github.com/anas10rahman/lms-platform-belajar" target="_blank" rel="noopener">
       <div class="proj-top">
         <h3>LMS Platform <svg class="gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0012 .5z"/></svg></h3>
-        <span class="yr">Side project</span>
+        <span class="yr" data-i18n="proj.side">Side project</span>
       </div>
-      <p>A web-based learning management system covering course management, participants, learning materials & assignment workflows, with testing and documentation support.</p>
+      <p data-i18n="proj3.d">A web-based learning management system covering course management, participants, learning materials & assignment workflows, with testing and documentation support.</p>
       <div class="tags"><span class="tag">Web App</span><span class="tag">LMS</span><span class="tag">Education</span></div>
     </a>
     <a class="proj reveal" href="https://dev.loview.click" target="_blank" rel="noopener">
       <div class="proj-top">
         <h3>Loview Landing Page <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"/></svg></h3>
-        <span class="yr">Side project</span>
+        <span class="yr" data-i18n="proj.side">Side project</span>
       </div>
-      <p>As Technical Support, I assisted the Project Manager in building Loview's landing page — a scalable foundation designed to be extended and customized to each client's requests.</p>
+      <p data-i18n="proj4.d">As Technical Support, I assisted the Project Manager in building Loview's landing page — a scalable foundation designed to be extended and customized to each client's requests.</p>
       <div class="tags"><span class="tag">Technical Support</span><span class="tag">Landing Page</span><span class="tag">Scalable</span></div>
     </a>
   </div>
@@ -336,17 +342,17 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
 <!-- CERTIFICATIONS -->
 <section id="certs">
   <div class="wrap">
-    <h2 class="reveal">Certifications</h2>
+    <h2 class="reveal" data-i18n="certs.h2">Certifications</h2>
     <div class="cert-grid">
       <div class="cert reveal">
         <div class="yr">2025</div>
         <h3>Tableau Server Administrator</h3>
-        <p>Validated knowledge of server installation, configuration, maintenance, monitoring, troubleshooting & platform administration.</p>
+        <p data-i18n="cert1.d">Validated knowledge of server installation, configuration, maintenance, monitoring, troubleshooting & platform administration.</p>
       </div>
       <div class="cert reveal" style="transition-delay:.06s">
         <div class="yr">2023</div>
         <h3>Competency Assessor</h3>
-        <p>Competency assessment (observation, interview, portfolio), certification documentation & technical documentation.</p>
+        <p data-i18n="cert2.d">Competency assessment (observation, interview, portfolio), certification documentation & technical documentation.</p>
       </div>
     </div>
   </div>
@@ -361,7 +367,7 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
           <span class="mark"></span>
           <span>Muhammad Anas Rahman</span>
         </div>
-        <p class="footer-desc">Technical Engineer & Tableau Server specialist — deploying, configuring, and keeping data platforms reliable across government and private-sector environments.</p>
+        <p class="footer-desc" data-i18n="footer.desc">Technical Engineer & Tableau Server specialist — deploying, configuring, and keeping data platforms reliable across government and private-sector environments.</p>
         <ul class="footer-social">
           <li><a href="https://www.linkedin.com/in/muhammad-anas-rahman-906122152/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></li>
@@ -375,20 +381,20 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
       </div>
       <div class="footer-cols">
         <div class="footer-col">
-          <h3>Jump to</h3>
+          <h3 data-i18n="footer.jumpTo">Jump to</h3>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#expertise">What I do</a></li>
-            <li><a href="#work">Where I've worked</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certs">Certifications</a></li>
-            <li><a href="#contact">Connect</a></li>
+            <li><a href="#about" data-i18n="footer.f.about">About</a></li>
+            <li><a href="#expertise" data-i18n="footer.f.whatido">What I do</a></li>
+            <li><a href="#work" data-i18n="footer.f.work">Where I've worked</a></li>
+            <li><a href="#projects" data-i18n="footer.f.projects">Projects</a></li>
+            <li><a href="#certs" data-i18n="footer.f.certs">Certifications</a></li>
+            <li><a href="#contact" data-i18n="footer.f.connect">Connect</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="yr"></span> Muhammad Anas Rahman. All rights reserved.</p>
+      <p>© <span id="yr"></span> Muhammad Anas Rahman. <span data-i18n="footer.rights">All rights reserved.</span></p>
       <ul class="footer-legal">
         <li><span class="mono">Jakarta, Indonesia</span></li>
       </ul>
@@ -410,6 +416,77 @@ h2{font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-0.03em;line-
     entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // i18n language switch
+  const I18N = {
+    "nav.about":{en:"About",id:"Tentang"},
+    "nav.work":{en:"Work",id:"Pengalaman"},
+    "nav.projects":{en:"Projects",id:"Proyek"},
+    "nav.cta":{en:"Get in touch",id:"Hubungi Saya"},
+    "btn.getInTouch":{en:"Get in touch",id:"Hubungi Saya"},
+    "btn.downloadCv":{en:"Download CV",id:"Unduh CV"},
+    "hero.lead":{en:"<b>Technical Engineer specializing in Tableau Server.</b> I deploy, configure, and maintain data platforms \u2014 keeping systems reliable across government and private-sector environments. 3+ years, based in Jakarta.",id:"<b>Technical Engineer dengan spesialisasi Tableau Server.</b> Saya men-deploy, mengonfigurasi, dan memelihara platform data \u2014 menjaga sistem tetap andal di lingkungan pemerintah maupun swasta. 3+ tahun pengalaman, berbasis di Jakarta."},
+    "about.h2":{en:"About me",id:"Tentang Saya"},
+    "about.p1":{en:"I'm an <b>IT Infrastructure & Tableau Server specialist</b> based in Jakarta Selatan. For the past three years I've delivered installation, configuration, maintenance, and support for Tableau Server across production environments \u2014 resolving incidents for government clients within a two-hour SLA.",id:"Saya seorang <b>spesialis IT Infrastructure & Tableau Server</b> yang berbasis di Jakarta Selatan. Selama tiga tahun terakhir, saya menangani instalasi, konfigurasi, pemeliharaan, dan dukungan Tableau Server di lingkungan produksi \u2014 menyelesaikan insiden untuk klien pemerintah dalam SLA dua jam."},
+    "about.p2":{en:"My work centers on reliability: preventive and corrective maintenance, system optimization, and the clear technical documentation that keeps platforms running long after I've left the room. Alongside that, I serve as a <b>certified Competency Assessor at LSP</b>, evaluating candidates against national standards.",id:"Fokus pekerjaan saya adalah keandalan: preventive & corrective maintenance, optimasi sistem, serta dokumentasi teknis yang jelas agar platform tetap berjalan lama setelah saya menyelesaikan tugas. Selain itu, saya juga menjadi <b>Asesor Kompetensi tersertifikasi di LSP</b>, menilai kandidat sesuai standar nasional."},
+    "stat.years":{en:"Years experience",id:"Tahun pengalaman"},
+    "stat.clients":{en:"Gov & private clients",id:"Klien pemerintah & swasta"},
+    "stat.sla":{en:"Incident resolution SLA",id:"SLA penyelesaian insiden"},
+    "stat.candidates":{en:"Candidates assessed",id:"Kandidat dinilai"},
+    "expertise.h2":{en:"What I do",id:"Yang Saya Kerjakan"},
+    "exp1.t":{en:"Tableau Server Administration",id:"Administrasi Tableau Server"},
+    "exp1.d":{en:"Installation, configuration, monitoring & platform administration.",id:"Instalasi, konfigurasi, monitoring & administrasi platform."},
+    "exp2.t":{en:"Troubleshooting & Incident Handling",id:"Troubleshooting & Penanganan Insiden"},
+    "exp2.d":{en:"Corrective maintenance and production incident resolution under SLA.",id:"Corrective maintenance dan penyelesaian insiden produksi sesuai SLA."},
+    "exp3.t":{en:"Preventive Maintenance",id:"Preventive Maintenance"},
+    "exp3.d":{en:"Scheduled weekly, bi-weekly & monthly cycles for system stability.",id:"Siklus terjadwal mingguan, dua-mingguan & bulanan untuk kestabilan sistem."},
+    "exp4.t":{en:"Linux Monitoring",id:"Monitoring Linux"},
+    "exp4.d":{en:"Server health checks and monitoring scripts for reliability.",id:"Health check server dan script monitoring untuk keandalan."},
+    "exp5.t":{en:"Technical Documentation",id:"Dokumentasi Teknis"},
+    "exp5.d":{en:"Maintenance reports, checklists & troubleshooting playbooks.",id:"Laporan maintenance, checklist & playbook troubleshooting."},
+    "exp6.t":{en:"Competency Assessment",id:"Asesmen Kompetensi"},
+    "exp6.d":{en:"Observation, interview & portfolio review aligned to LSP standards.",id:"Observasi, wawancara & review portofolio sesuai standar LSP."},
+    "work.h2":{en:"Where I've worked",id:"Tempat Saya Bekerja"},
+    "work.when1":{en:"2023 \u2014 Present",id:"2023 \u2014 Sekarang"},
+    "work.when2":{en:"2025 \u2014 Present",id:"2025 \u2014 Sekarang"},
+    "work.when3":{en:"2024 \u2014 Present",id:"2024 \u2014 Sekarang"},
+    "work1.role":{en:"IT Support \u2014 Tableau Server",id:"IT Support \u2014 Tableau Server"},
+    "work2.role":{en:"Assessor & Scheme Committee",id:"Asesor & Komite Skema"},
+    "work3.role":{en:"Instructor's Assistant",id:"Asisten Instruktur"},
+    "work1.d":{en:"Delivered Tableau Server installation, configuration & support for 3 government clients in production, plus support cases for 5+ private-sector clients. Ran scheduled preventive maintenance and resolved incidents within a 2-hour SLA.",id:"Menangani instalasi, konfigurasi & dukungan Tableau Server untuk 3 klien pemerintah di lingkungan produksi, serta menangani kasus dukungan untuk 5+ klien swasta. Menjalankan preventive maintenance terjadwal dan menyelesaikan insiden dalam SLA 2 jam."},
+    "work2.d":{en:"Conducted competency assessments for 50+ candidates using standardized methods, and managed assessment documentation for ~200 candidates supporting certification schemes.",id:"Melakukan asesmen kompetensi untuk 50+ kandidat dengan metode terstandar, dan mengelola dokumentasi asesmen untuk ~200 kandidat guna mendukung skema sertifikasi."},
+    "work3.d":{en:"Assisted technical workshops for 70+ participants, prepared learning materials, and evaluated participant projects with structured feedback.",id:"Membantu workshop teknis untuk 70+ peserta, menyiapkan materi pembelajaran, dan mengevaluasi proyek peserta dengan umpan balik terstruktur."},
+    "projects.h2":{en:"Projects",id:"Proyek"},
+    "proj.ongoing":{en:"Ongoing",id:"Berjalan"},
+    "proj.side":{en:"Side project",id:"Proyek sampingan"},
+    "proj1.d":{en:"A technical portfolio of health checks, Linux monitoring scripts, maintenance checklists & troubleshooting playbooks, with structured documentation templates for preventive, corrective, and incident workflows.",id:"Portofolio teknis berisi health check, script monitoring Linux, checklist maintenance & playbook troubleshooting, lengkap dengan template dokumentasi terstruktur untuk alur preventive, corrective, dan insiden."},
+    "proj2.d":{en:"A team-built web app for finance management \u2014 transaction recording, category management & summary reporting \u2014 developed with AI-assisted tooling and structured testing.",id:"Aplikasi web manajemen keuangan yang dibangun tim \u2014 pencatatan transaksi, manajemen kategori & laporan ringkasan \u2014 dikembangkan dengan bantuan tools AI dan pengujian terstruktur."},
+    "proj3.d":{en:"A web-based learning management system covering course management, participants, learning materials & assignment workflows, with testing and documentation support.",id:"Learning management system berbasis web yang mencakup manajemen kursus, peserta, materi pembelajaran & alur tugas, dengan dukungan pengujian dan dokumentasi."},
+    "proj4.d":{en:"As Technical Support, I assisted the Project Manager in building Loview's landing page \u2014 a scalable foundation designed to be extended and customized to each client's requests.",id:"Sebagai Technical Support, saya membantu Project Manager membangun landing page Loview \u2014 fondasi scalable yang dirancang untuk dikembangkan dan disesuaikan dengan permintaan tiap klien."},
+    "certs.h2":{en:"Certifications",id:"Sertifikasi"},
+    "cert1.d":{en:"Validated knowledge of server installation, configuration, maintenance, monitoring, troubleshooting & platform administration.",id:"Memvalidasi pengetahuan tentang instalasi, konfigurasi, pemeliharaan, monitoring, troubleshooting & administrasi platform server."},
+    "cert2.d":{en:"Competency assessment (observation, interview, portfolio), certification documentation & technical documentation.",id:"Asesmen kompetensi (observasi, wawancara, portofolio), dokumentasi sertifikasi & dokumentasi teknis."},
+    "footer.desc":{en:"Technical Engineer & Tableau Server specialist \u2014 deploying, configuring, and keeping data platforms reliable across government and private-sector environments.",id:"Technical Engineer & spesialis Tableau Server \u2014 men-deploy, mengonfigurasi, dan menjaga platform data tetap andal di lingkungan pemerintah maupun swasta."},
+    "footer.jumpTo":{en:"Jump to",id:"Menu"},
+    "footer.f.about":{en:"About",id:"Tentang"},
+    "footer.f.whatido":{en:"What I do",id:"Yang Saya Kerjakan"},
+    "footer.f.work":{en:"Where I've worked",id:"Pengalaman"},
+    "footer.f.projects":{en:"Projects",id:"Proyek"},
+    "footer.f.certs":{en:"Certifications",id:"Sertifikasi"},
+    "footer.f.connect":{en:"Connect",id:"Hubungi"},
+    "footer.rights":{en:"All rights reserved.",id:"Semua hak dilindungi."}
+  };
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const t = I18N[el.getAttribute('data-i18n')];
+      if (t && t[lang] != null) el.innerHTML = t[lang];
+    });
+    document.querySelectorAll('.lang-opt').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+  document.querySelectorAll('.lang-opt').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+  (function(){ let saved = 'en'; try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {} applyLang(saved); })();
 
 </script>
 </body>
